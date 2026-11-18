@@ -1,6 +1,7 @@
 import os
 import time
 import tempfile
+from pathlib import Path
 import streamlit as st
 
 from langchain_community.document_loaders import PyPDFLoader
@@ -13,6 +14,15 @@ from evals import evaluate_rag_response
 from guardrails import check_input_guardrails, check_output_guardrails
 
 GEMINI_FLASH_CONTEXT_WINDOW = 1_048_576
+
+# -----------------------------------------------------------------------------
+# PROJECT DIRECTORY CONFIGURATION
+# -----------------------------------------------------------------------------
+
+BASE_DIR = Path(__file__).resolve().parent
+
+TEMP_DIR = BASE_DIR / "temp_uploads"
+TEMP_DIR.mkdir(parents=True, exist_ok=True)
 
 st.set_page_config(
     page_title="Multi-PDF QnA with IR Metrics & Guardrails",
