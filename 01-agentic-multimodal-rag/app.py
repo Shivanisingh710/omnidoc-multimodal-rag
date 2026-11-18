@@ -1,3 +1,4 @@
+from pathlib import Path
 import streamlit as st
 from langchain_core.messages import HumanMessage, AIMessage
 
@@ -7,6 +8,12 @@ from agents import create_multimodal_rag_graph
 # 1. Page Configuration
 st.set_page_config(page_title="Multimodal Agentic RAG", page_icon="🤖", layout="wide")
 st.title("📄 MultiModal Agentic RAG Assistant")
+
+# Project Directory Configuration
+BASE_DIR = Path(__file__).resolve().parent
+
+TEMP_DIR = BASE_DIR / "temp_uploads"
+TEMP_DIR.mkdir(parents=True, exist_ok=True)
 
 # 2. Session State Initialization
 if "messages" not in st.session_state:
