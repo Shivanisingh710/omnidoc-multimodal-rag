@@ -1,0 +1,23 @@
+streamlit
+
+# LangChain ecosystem
+langchain-core
+langchain-community
+langchain-text-splitters
+langgraph
+
+# LLM providers
+langchain-openai
+langchain-google-genai
+
+# Vector databases
+chromadb
+faiss-cpu
+
+# PDF and image processing
+pypdf
+pymupdf
+Pillow
+
+# Token counting
+tiktoken
